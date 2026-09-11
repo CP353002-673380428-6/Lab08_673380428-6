@@ -18,6 +18,7 @@ public class ProductDetail {
     private String dimensions;
     private String manufacturedCountry;
 
+    // Inverse side ของ One-to-One
     @OneToOne(mappedBy = "detail")
     private Product product;
 
@@ -31,6 +32,7 @@ public class ProductDetail {
         this.manufacturedCountry = manufacturedCountry;
     }
 
+    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

@@ -13,19 +13,21 @@ import java.util.List;
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final DiscountContext discountContext;
 
-    public ProductService(ProductRepository productRepository) {
+    // DIP: รับ Abstraction / Spring-managed Bean ผ่าน Constructor Injection
+    public ProductService(ProductRepository productRepository, DiscountContext discountContext) {
         this.productRepository = productRepository;
+        this.discountContext = discountContext;
     }
 
     public List<Product> getAllProducts() {
         List<Product> products = productRepository.findAll();
-        DiscountContext context = new DiscountContext();
 
         for (Product product : products) {
-            context.setStrategy(DiscountContext.getStrategyByType(product.getDiscountType()));
+            discountContext.setStrategy(discountContext.getStrategyByType(product.getDiscountType()));
             double price = (product.getPrice() != null) ? product.getPrice() : 0.0;
-            double discounted = context.calculate(price);
+            double discounted = discountContext.calculate(price);
             product.setDiscountedPrice(discounted);
         }
         return products;

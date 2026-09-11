@@ -19,27 +19,33 @@ public class Product {
     private Double price;
     private String discountType = "NONE";
 
+    // ── 1:1 กับ ProductDetail (Owner side) ──
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "detail_id", referencedColumnName = "id")
     private ProductDetail detail = new ProductDetail();
 
+    // ── 1:N กับ Review ──
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
 
+    // เก็บราคาสุทธิที่คำนวณแล้วสำหรับแสดงผลใน View (ไม่บันทึกลงฐานข้อมูล)
     @Transient
     private Double discountedPrice;
 
     public Product() {
+        // เพิ่ม Review เปล่าไว้ 1 ตัวเพื่อรองรับการ Binding ฟอร์มใน add.html
         Review initialReview = new Review();
         initialReview.setProduct(this);
         this.reviews.add(initialReview);
     }
 
+    // Helper method จัดการความสัมพันธ์ Review
     public void addReview(Review review) {
         reviews.add(review);
         review.setProduct(this);
     }
 
+    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

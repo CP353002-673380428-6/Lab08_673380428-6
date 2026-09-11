@@ -19,6 +19,7 @@ public class Review {
 
     private LocalDate reviewDate;
 
+    // ManyToOne: เก็บ Foreign Key (product_id)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
@@ -34,6 +35,7 @@ public class Review {
         this.reviewDate = LocalDate.now();
     }
 
+    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
