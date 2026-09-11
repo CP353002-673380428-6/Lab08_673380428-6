@@ -1,13 +1,10 @@
-นี่คือเนื้อหาไฟล์ **`Readme.md`** ภาษาไทยฉบับสมบูรณ์ ที่จัดโครงสร้างอย่างเป็นระเบียบ ครอบคลุมทั้งรายละเอียดโจทย์, การประยุกต์ใช้ SOLID Principles, โครงสร้างตาราง (1:1 และ 1:N), Strategy Pattern และคู่มือการติดตั้ง สามารถคัดลอกไปวางทับในไฟล์ `Readme.md` ของโปรเจกต์ได้เลยครับ:
+> นี่คือเนื้อหาไฟล์ **`Readme.md`** ภาษาไทยฉบับสมบูรณ์ ที่จัดโครงสร้างอย่างเป็นระเบียบ ครอบคลุมทั้งรายละเอียดโจทย์, การประยุกต์ใช้ SOLID Principles, โครงสร้างตาราง (1:1 และ 1:N), Strategy Pattern และคู่มือการติดตั้ง สามารถคัดลอกไปวางทับในไฟล์ `Readme.md` ของโปรเจกต์ได้เลยครับ:
 
----
-
-```markdown
 # 🛍️ Lab 8: Table Relationships — Product Shop
 
-**วิชา:** CP353002 Principles of Software Design  
-**ผู้จัดทำ:** รหัสนักศึกษา `673380428-6` | กลุ่มเรียน (Section) `4`  
-**เทคโนโลยีหลัก:** Java 21 / Spring Boot 3.3.0 / Spring Data JPA / PostgreSQL / Thymeleaf  
+**วิชา:** CP353002 Principles of Software Design
+**ผู้จัดทำ:** รหัสนักศึกษา `673380428-6` | กลุ่มเรียน (Section) `4`
+**เทคโนโลยีหลัก:** Java 21 / Spring Boot 3.3.0 / Spring Data JPA / PostgreSQL / Thymeleaf
 
 ---
 
@@ -205,4 +202,3 @@ mvn clean spring-boot:run
 * **กลุ่มเรียน:** Section 4
 * **รายวิชา:** CP353002 Principles of Software Design
 * **มหาวิทยาลัยขอนแก่น (Khon Kaen University)**
-```
